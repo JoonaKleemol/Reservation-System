@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\avatar-dialog",
+    "\\src\\app\\edit-user",
+    "\\src\\app\\home",
+    "\\src\\app\\new-user",
+    "\\src\\app\\services",
+    "\\src\\assets",
+    "\\src\\environments"
+  ],
+  "SelectedNode": "\\src\\app\\new-user\\new-user.component.ts",
+  "PreviewInSolutionExplorer": false
+}
