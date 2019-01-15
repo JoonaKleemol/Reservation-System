@@ -13,39 +13,39 @@ export class FirebaseService {
   }
 
   getUser(userKey){
-    return this.db.collection('users').doc(userKey).snapshotChanges();
+    return this.db.collection('reservations').doc(userKey).snapshotChanges();
   }
 
   updateUser(userKey, value){
     value.nameToSearch = value.name.toLowerCase();
-    return this.db.collection('users').doc(userKey).set(value);
+    return this.db.collection('reservations').doc(userKey).set(value);
   }
 
   deleteUser(userKey){
-    return this.db.collection('users').doc(userKey).delete();
+    return this.db.collection('reservations').doc(userKey).delete();
   }
 
   getUsers(){
-    return this.db.collection('users').snapshotChanges();
+    return this.db.collection('reservations').snapshotChanges();
   }
 
   searchUsers(searchValue){
-    return this.db.collection('users',ref => ref.where('nameToSearch', '>=', searchValue)
+    return this.db.collection('reservations',ref => ref.where('nameToSearch', '>=', searchValue)
       .where('nameToSearch', '<=', searchValue + '\uf8ff'))
       .snapshotChanges()
   }
 
   searchUsersByAge(value){
-    return this.db.collection('users',ref => ref.orderBy('age').startAt(value)).snapshotChanges();
+    return this.db.collection('reservations',ref => ref.orderBy('Item_ID').startAt(value)).snapshotChanges();
   }
 
 
   createUser(value, avatar){
-    return this.db.collection('users').add({
-      name: value.name,
-      nameToSearch: value.name.toLowerCase(),
-      surname: value.surname,
-      age: parseInt(value.age),
+    return this.db.collection('reservations').add({
+      CustomerName: value.CustomerName,
+      nameToSearch: value.CustomerName.toLowerCase(),
+      ItemName: value.ItemName,
+      ItemID: parseInt(value.ItemID),
       avatar: avatar
     });
   }

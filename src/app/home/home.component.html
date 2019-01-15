@@ -36,8 +36,8 @@
         <img class="image" [src]="item.payload.doc.data().avatar">
       </div>
       <div class="col col-md-8 text-col">
-        <h5 class="mb-1">{{item.payload.doc.data().name}} {{item.payload.doc.data().surname}}</h5>
-        <small>Age: {{item.payload.doc.data().age}}</small>
+        <h5 class="mb-1">{{item.payload.doc.data().CustomerName}} {{item.payload.doc.data().ItemName}}</h5>
+        <small>Item ID: {{item.payload.doc.data().ItemID}}</small>
       </div>
       <div class="col col-md-2 actions-col">
         <button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">

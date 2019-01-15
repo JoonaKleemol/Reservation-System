@@ -9,7 +9,7 @@ import { Router, Params } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  ageValue: number = 0;
+  ItemIDValue: number = 0;
   searchValue: string = "";
   items: Array<any>;
   age_filtered_items: Array<any>;

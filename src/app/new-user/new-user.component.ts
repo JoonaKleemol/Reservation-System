@@ -16,14 +16,14 @@ export class NewUserComponent implements OnInit {
   avatarLink: string = "https://nyoobserver.files.wordpress.com/2014/11/sleep.png?w=256";
 
   validation_messages = {
-   'name': [
-     { type: 'required', message: 'Name is required.' }
+   'CustomerName': [
+     { type: 'required', message: 'Customer Name is required.' }
    ],
-   'surname': [
-     { type: 'required', message: 'Surname is required.' }
+   'ItemName': [
+     { type: 'required', message: 'Item Name is required.' }
    ],
-   'age': [
-     { type: 'required', message: 'Age is required.' },
+   'ItemID': [
+     { type: 'required', message: 'Item ID is required.' },
    ]
  };
 
@@ -40,9 +40,9 @@ export class NewUserComponent implements OnInit {
 
   createForm() {
     this.exampleForm = this.fb.group({
-      name: ['', Validators.required ],
-      surname: ['', Validators.required ],
-      age: ['', Validators.required ]
+      CustomerName: ['', Validators.required ],
+      ItemName: ['', Validators.required ],
+      ItemID: ['', Validators.required ]
     });
   }
 
@@ -62,9 +62,9 @@ export class NewUserComponent implements OnInit {
   resetFields(){
     this.avatarLink = "https://nyoobserver.files.wordpress.com/2014/11/sleep.png?w=256";
     this.exampleForm = this.fb.group({
-      name: new FormControl('', Validators.required),
-      surname: new FormControl('', Validators.required),
-      age: new FormControl('', Validators.required),
+      CustomerName: ['', Validators.required],
+      ItemName: ['', Validators.required],
+      ItemID: ['', Validators.required]
     });
   }
 
