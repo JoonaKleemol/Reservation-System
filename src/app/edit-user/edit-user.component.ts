@@ -49,9 +49,9 @@ export class EditUserComponent implements OnInit {
 
   createForm() {
     this.exampleForm = this.fb.group({
-      CustomerName: [this.item.Customer_Name, Validators.required],
-      ItemName: [this.item.Item_Name, Validators.required],
-      ItemID: [this.item.Item_ID, Validators.required]
+      CustomerName: [this.item.CustomerName, Validators.required],
+      ItemName: [this.item.ItemName, Validators.required],
+      ItemID: [this.item.ItemID, Validators.required]
     });
   }
 
@@ -70,7 +70,7 @@ export class EditUserComponent implements OnInit {
 
   onSubmit(value){
     value.avatar = this.item.avatar;
-    value.Item_ID = Number(value.Item_ID);
+    value.ItemID = Number(value.ItemID);
     this.firebaseService.updateUser(this.item.id, value)
     .then(
       res => {

@@ -7,26 +7,7 @@
       </div>
     </div>
   </div>
-  <div class="col-md-6 filter-by-age">
-    <div class="row">
-      <div class="col-md-auto title">
-        <span>Filter by age (older than):</span>
-      </div>
-      <div class="col">
-        <span>0 </span>
-        <mat-slider
-          class="age-slider"
-          max="100"
-          min="0"
-          step="1"
-          thumbLabel="true"
-          (ngModel)="ageValue"
-          (change)="rangeChange($event)">
-        </mat-slider>
-        <span> 100</span>
-      </div>
-    </div>
-  </div>
+  
 </div>
 
 <div class="list-group users-list">
@@ -36,7 +17,8 @@
         <img class="image" [src]="item.payload.doc.data().avatar">
       </div>
       <div class="col col-md-8 text-col">
-        <h5 class="mb-1">{{item.payload.doc.data().CustomerName}} {{item.payload.doc.data().ItemName}}</h5>
+        <h5 class="mb-1">{{item.payload.doc.data().CustomerName}}</h5>
+        <h5 class="mb-1">{{item.payload.doc.data().ItemName}}</h5>
         <small>Item ID: {{item.payload.doc.data().ItemID}}</small>
       </div>
       <div class="col col-md-2 actions-col">

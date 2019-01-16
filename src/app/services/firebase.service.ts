@@ -9,20 +9,20 @@ export class FirebaseService {
   constructor(public db: AngularFirestore) {}
 
   getAvatars(){
-      return this.db.collection('/avatar').valueChanges()
+      return this.db.collection('avatar').valueChanges()
   }
 
-  getUser(userKey){
-    return this.db.collection('reservations').doc(userKey).snapshotChanges();
+  getUser(reservationsKey){
+    return this.db.collection('reservations').doc(reservationsKey).snapshotChanges();
   }
 
-  updateUser(userKey, value){
-    value.nameToSearch = value.name.toLowerCase();
-    return this.db.collection('reservations').doc(userKey).set(value);
+  updateUser(reservationsKey, value){
+    value.nameToSearch = value.CustomerName.toLowerCase();
+    return this.db.collection('reservations').doc(reservationsKey).set(value);
   }
 
-  deleteUser(userKey){
-    return this.db.collection('reservations').doc(userKey).delete();
+  deleteUser(reservationsKey){
+    return this.db.collection('reservations').doc(reservationsKey).delete();
   }
 
   getUsers(){
