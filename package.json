@@ -1,5 +1,5 @@
 {
-  "name": "angular6-firebase-crud",
+  "name": "reservation-system",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

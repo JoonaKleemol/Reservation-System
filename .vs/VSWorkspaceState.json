@@ -1,16 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\app",
     "\\src\\app\\avatar-dialog",
-    "\\src\\app\\edit-reservation",
+    "\\src\\app\\edit-user",
     "\\src\\app\\home",
     "\\src\\app\\new-user",
-    "\\src\\app\\services",
-    "\\src\\assets",
-    "\\src\\environments"
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\polyfills.ts",
+  "SelectedNode": "\\angular.json",
   "PreviewInSolutionExplorer": false
 }
