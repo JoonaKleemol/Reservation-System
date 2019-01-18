@@ -1,4 +1,4 @@
-# Angular 6 Firebase CRUD Tutorial
+# Reservation System
 
 
 ## Install dependencies
