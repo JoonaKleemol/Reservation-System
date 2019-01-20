@@ -22,6 +22,9 @@
         <small>Item ID: {{item.payload.doc.data().ItemID}}</small>
       </div>
       <div class="col col-md-2 actions-col">
+        <button class="btn btn-outline-primary action" (click)="viewAll(item)" type="button">
+            <ion-icon class="icon" name="list"></ion-icon>
+        </button>
         <button class="btn btn-outline-primary action" (click)="viewDetails(item)" type="button">
           <ion-icon class="icon" name="arrow-round-forward"></ion-icon>
         </button>

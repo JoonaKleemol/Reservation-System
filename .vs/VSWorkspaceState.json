@@ -3,10 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\edit-user",
+    "\\src\\app\\home",
+    "\\src\\app\\login",
+    "\\src\\app\\new-user",
     "\\src\\app\\services",
     "\\src\\assets",
     "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\index.html",
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }

@@ -1,7 +1,7 @@
 <div class="create-page">
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item active" aria-current="page">Create User</li>
+      <li class="breadcrumb-item active" aria-current="page">Make A Reservation</li>
     </ol>
   </nav>
   <div class="page-content">
@@ -26,6 +26,15 @@
 
           <div class="form-group">
             <mat-form-field class="input-style">
+              <input matInput type="number" min="0" placeholder="Customer Phone" class="form-control" formControlName="CustomerPhone">
+            </mat-form-field>
+            <ng-container *ngFor="let validation of validation_messages.CustomerPhone">
+              <mat-error *ngIf="exampleForm.get('CustomerPhone').hasError(validation.type) && (exampleForm.get('CustomerPhone').dirty || exampleForm.get('CustomerPhone').touched)">{{validation.message}}</mat-error>
+            </ng-container>
+          </div>
+
+          <div class="form-group">
+            <mat-form-field class="input-style">
               <input matInput placeholder="Item Name" class="form-control" formControlName="ItemName">
             </mat-form-field>
             <ng-container *ngFor="let validation of validation_messages.ItemName">
@@ -35,10 +44,28 @@
 
           <div class="form-group">
             <mat-form-field class="input-style">
-              <input matInput type="number" min="0" max="1000000" placeholder="Item ID" class="form-control" formControlName="ItemID">
+              <input matInput type="number" min="0" placeholder="Item ID" class="form-control" formControlName="ItemID">
             </mat-form-field>
             <ng-container *ngFor="let validation of validation_messages.ItemID">
               <mat-error *ngIf="exampleForm.get('ItemID').hasError(validation.type) && (exampleForm.get('ItemID').dirty || exampleForm.get('ItemID').touched)">{{validation.message}}</mat-error>
+            </ng-container>
+          </div>
+
+          <div class="form-group">
+            <mat-form-field class="input-style">
+              <input matInput placeholder="Person who made the reservation" class="form-control" formControlName="Reserver">
+            </mat-form-field>
+            <ng-container *ngFor="let validation of validation_messages.Reserver">
+              <mat-error *ngIf="exampleForm.get('Reserver').hasError(validation.type) && (exampleForm.get('Reserver').dirty || exampleForm.get('Reserver').touched)">{{validation.message}}</mat-error>
+            </ng-container>
+          </div>
+
+          <div class="form-group">
+            <mat-form-field class="input-style">
+              <input matInput placeholder="Reserved until" class="form-control" formControlName="ReservationDate">
+            </mat-form-field>
+            <ng-container *ngFor="let validation of validation_messages.ReservationDate">
+              <mat-error *ngIf="exampleForm.get('ReservationDate').hasError(validation.type) && (exampleForm.get('ReservationDate').dirty || exampleForm.get('ReservationDate').touched)">{{validation.message}}</mat-error>
             </ng-container>
           </div>
 
