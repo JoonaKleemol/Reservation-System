@@ -3,7 +3,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
-import { rootRouterConfig } from './app.routes';
+import { AppRoutes } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { AvatarDialogComponent } from './avatar-dialog/avatar-dialog.component';
@@ -16,9 +16,18 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { FirebaseService } from './services/firebase.service';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule } from '@angular/material';
+import { LoginComponent } from './login/login.component';
+
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth-guard.service';
+import { ShowAllComponent } from './show-all/show-all.component';
+import { ShowAllResolver } from './show-all/show-all.resolver';
 
 
 @NgModule({
@@ -27,23 +36,27 @@ import {MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule } from
     AvatarDialogComponent,
     EditUserComponent,
     NewUserComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    ShowAllComponent
   ],
   entryComponents: [AvatarDialogComponent],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(rootRouterConfig, { useHash: false }),
-    AngularFireModule.initializeApp(environment.firebase),
+    AppRoutes,
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
     AngularFirestoreModule,
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
     MatSliderModule,
     MatDialogModule
   ],
-  providers: [FirebaseService, EditUserResolver],
+  providers: [FirebaseService, EditUserResolver, ShowAllResolver, AuthService, AuthGuard],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

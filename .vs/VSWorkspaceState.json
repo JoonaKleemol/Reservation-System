@@ -3,14 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\avatar-dialog",
-    "\\src\\app\\edit-reservation",
+    "\\src\\app\\edit-user",
     "\\src\\app\\home",
+    "\\src\\app\\login",
     "\\src\\app\\new-user",
     "\\src\\app\\services",
     "\\src\\assets",
     "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\polyfills.ts",
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }

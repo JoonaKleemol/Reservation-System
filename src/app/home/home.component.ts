@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from '../services/firebase.service';
 import { Router, Params } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     public firebaseService: FirebaseService,
-    private router: Router
+    private router: Router,
+    public authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -35,6 +37,10 @@ export class HomeComponent implements OnInit {
 
   viewDetails(item){
     this.router.navigate(['/details/'+ item.payload.doc.id])
+  }
+
+  viewAll(item) {
+    this.router.navigate(['/details2/' + item.payload.doc.id])
   }
 
   capitalizeFirstLetter(value){

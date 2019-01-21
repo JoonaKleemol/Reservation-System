@@ -45,7 +45,10 @@ export class FirebaseService {
       CustomerName: value.CustomerName,
       nameToSearch: value.CustomerName.toLowerCase(),
       ItemName: value.ItemName,
+      Reserver: value.Reserver,
+      ReservationDate: parseInt(value.ReservationDate),
       ItemID: parseInt(value.ItemID),
+      CustomerPhone: parseInt(value.CustomerPhone),
       avatar: avatar
     });
   }

@@ -8,26 +8,26 @@ import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
 @Component({
-  selector: 'app-edit-user',
-  templateUrl: './edit-user.component.html',
-  styleUrls: ['./edit-user.component.scss']
+  selector: 'app-show-all',
+  templateUrl: './show-all.component.html',
+  styleUrls: ['./show-all.component.scss']
 })
-export class EditUserComponent implements OnInit {
+export class ShowAllComponent implements OnInit {
 
   exampleForm: FormGroup;
   item: any;
 
   validation_messages = {
-   'CustomerName': [
-     { type: 'required', message: 'Customer Name is required.' }
-   ],
-   'ItemName': [
-     { type: 'required', message: 'Item Name is required.' }
-   ],
-   'ItemID': [
-     { type: 'required', message: 'Item ID is required.' },
-   ]
- };
+    'CustomerName': [
+      { type: 'required', message: 'Customer Name is required.' }
+    ],
+    'ItemName': [
+      { type: 'required', message: 'Item Name is required.' }
+    ],
+    'ItemID': [
+      { type: 'required', message: 'Item ID is required.' },
+    ]
+  };
 
   constructor(
     public firebaseService: FirebaseService,
@@ -64,36 +64,36 @@ export class EditUserComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(result){
+      if (result) {
         this.item.avatar = result.link;
       }
     });
   }
 
-  onSubmit(value){
+  onSubmit(value) {
     value.avatar = this.item.avatar;
     value.ItemID = Number(value.ItemID);
     this.firebaseService.updateUser(this.item.id, value)
-    .then(
+      .then(
       res => {
         this.router.navigate(['/home']);
       }
-    )
+      )
   }
 
-  delete(){
+  delete() {
     this.firebaseService.deleteUser(this.item.id)
-    .then(
+      .then(
       res => {
         this.router.navigate(['/home']);
       },
       err => {
         console.log(err);
       }
-    )
+      )
   }
 
-  cancel(){
+  cancel() {
     this.router.navigate(['/home']);
   }
 

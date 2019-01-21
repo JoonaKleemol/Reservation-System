@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material';
 import { AvatarDialogComponent } from "../avatar-dialog/avatar-dialog.component";
 import { Router } from '@angular/router';
 import { FirebaseService } from '../services/firebase.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-new-user',
@@ -24,14 +25,25 @@ export class NewUserComponent implements OnInit {
    ],
    'ItemID': [
      { type: 'required', message: 'Item ID is required.' },
-   ]
+   ],
+   'Reserver': [
+     { type: 'required', message: 'Reserver is required.' },
+   ],
+   'ReservationDate': [
+     { type: 'required', message: 'Date is required.' },
+   ],
+   'CustomerPhone': [
+     { type: 'required', message: 'Item ID is required.' },
+   ],
+
  };
 
   constructor(
     private fb: FormBuilder,
     public dialog: MatDialog,
     private router: Router,
-    public firebaseService: FirebaseService
+    public firebaseService: FirebaseService,
+    public authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -41,8 +53,11 @@ export class NewUserComponent implements OnInit {
   createForm() {
     this.exampleForm = this.fb.group({
       CustomerName: ['', Validators.required ],
-      ItemName: ['', Validators.required ],
-      ItemID: ['', Validators.required ]
+      ItemName: ['', Validators.required],
+      Reserver: ['', Validators.required],
+      ReservationDate: ['', Validators.required],
+      ItemID: ['', Validators.required],
+      CustomerPhone: ['', Validators.required]
     });
   }
 
@@ -64,7 +79,10 @@ export class NewUserComponent implements OnInit {
     this.exampleForm = this.fb.group({
       CustomerName: ['', Validators.required],
       ItemName: ['', Validators.required],
-      ItemID: ['', Validators.required]
+      Reserver: ['', Validators.required],
+      ReservationDate: ['', Validators.required],
+      ItemID: ['', Validators.required],
+      CustomerPhone: ['', Validators.required]
     });
   }
 
