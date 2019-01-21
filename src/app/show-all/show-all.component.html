@@ -10,42 +10,24 @@
         <img class="img-avatar" [src]="item.avatar">
       </div>
       <div class="col col-md-8">
-
+        <h5 class="mb-1">Customer Name</h5>
+        <h6>{{this.item.CustomerName}}</h6>
+        <h5 class="mb-1">Customer Phone</h5>
+        <h6>{{this.item.CustomerPhone}}</h6>
+        <h5 class="mb-1">Item Name</h5>
+        <h6>{{this.item.ItemName}}</h6>
+        <h5 class="mb-1">Item ID</h5>
+        <h6>{{this.item.ItemID}}</h6>
+        <h5 class="mb-1">Reserver</h5>
+        <h6>{{this.item.Reserver}}</h6>
+        <h5 class="mb-1">Reservation Date</h5>
+        <h6>{{this.item.ReservationDate}}</h6>
         <form class="edit-form" [formGroup]="exampleForm" novalidate (ngSubmit)="onSubmit(exampleForm.value)">
-
-          <div class="form-group">
-            <mat-form-field class="input-style">
-              <input matInput placeholder="CustomerName" class="form-control" formControlName="CustomerName">
-            </mat-form-field>
-            <ng-container *ngFor="let validation of validation_messages.CustomerName">
-              <mat-error *ngIf="exampleForm.get('CustomerName').hasError(validation.type) && (exampleForm.get('CustomerName').dirty || exampleForm.get('CustomerName').touched)">{{validation.message}}</mat-error>
-            </ng-container>
-          </div>
-
-          <div class="form-group">
-            <mat-form-field class="input-style">
-              <input matInput placeholder="ItemName" class="form-control" formControlName="ItemName">
-            </mat-form-field>
-            <ng-container *ngFor="let validation of validation_messages.ItemName">
-              <mat-error *ngIf="exampleForm.get('ItemName').hasError(validation.type) && (exampleForm.get('ItemName').dirty || exampleForm.get('ItemName').touched)">{{validation.message}}</mat-error>
-            </ng-container>
-          </div>
-
-          <div class="form-group">
-            <mat-form-field class="input-style">
-              <input matInput type="number" min="0" placeholder="Item_ID" class="form-control" formControlName="ItemID">
-            </mat-form-field>
-            <ng-container *ngFor="let validation of validation_messages.ItemID">
-              <mat-error *ngIf="exampleForm.get('ItemID').hasError(validation.type) && (exampleForm.get('ItemID').dirty || exampleForm.get('ItemID').touched)">{{validation.message}}</mat-error>
-            </ng-container>
-          </div>
-
-          <div class="row submit-button-container">
-            <div class="col-md-4">
-              <button mat-raised-button class="submit-button" color="primary" routerLink="home" >Back</button>
-            </div>
-            
-          </div>
+            <div class="row submit-button-container">
+              <div class="col-md-4">
+                <button mat-raised-button class="submit-button" color="primary" routerLink="home">Back</button>
+              </div>
+              </div>
         </form>
       </div>
     </div>

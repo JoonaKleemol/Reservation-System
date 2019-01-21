@@ -51,9 +51,12 @@ export class ShowAllComponent implements OnInit {
 
   createForm() {
     this.exampleForm = this.fb.group({
-      CustomerName: [this.item.CustomerName, Validators.required],
-      ItemName: [this.item.ItemName, Validators.required],
-      ItemID: [this.item.ItemID, Validators.required]
+      CustomerName: [this.item.CustomerName],
+      ItemName: [this.item.ItemName],
+      ItemID: [this.item.ItemID],
+      Reserver: [this.item.Reserver],
+      ReservationDate: [this.item.ReservationDate],
+      CustomerPhone: [this.item.CustomerPhone]
     });
   }
 
@@ -75,21 +78,9 @@ export class ShowAllComponent implements OnInit {
     value.ItemID = Number(value.ItemID);
     this.firebaseService.updateUser(this.item.id, value)
       .then(
-      res => {
-        this.router.navigate(['/home']);
-      }
-      )
-  }
-
-  delete() {
-    this.firebaseService.deleteUser(this.item.id)
-      .then(
-      res => {
-        this.router.navigate(['/home']);
-      },
-      err => {
-        console.log(err);
-      }
+        res => {
+          this.router.navigate(['/home']);
+        }
       )
   }
 

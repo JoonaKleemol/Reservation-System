@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'Item Reservation';
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
   ngOnInit() {
-    this.router.navigate(['home'])
+    this.router.navigate([''])
   }
 }
