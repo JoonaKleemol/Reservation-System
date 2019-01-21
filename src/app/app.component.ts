@@ -11,6 +11,6 @@ export class AppComponent {
   title = 'Item Reservation';
   constructor(private router: Router) { }
   ngOnInit() {
-    this.router.navigate([''])
+    this.router.navigate(['home'])
   }
 }
