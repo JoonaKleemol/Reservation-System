@@ -19,7 +19,7 @@
       <div class="col col-md-8 text-col">
         <h5 class="mb-1">{{item.payload.doc.data().CustomerName}}</h5>
         <h5 class="mb-1">{{item.payload.doc.data().ItemName}}</h5>
-        <small>Item ID: {{item.payload.doc.data().ItemID}}</small>
+        <small>{{item.payload.doc.data().ItemID}}</small>
       </div>
       <div class="col col-md-2 actions-col">
         <button class="btn btn-outline-primary action" (click)="viewAll(item)" type="button">

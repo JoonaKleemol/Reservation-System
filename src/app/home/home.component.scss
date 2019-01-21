@@ -9,12 +9,15 @@
     width: 85%;
   }
 }
+.list-group-item {
+  min-width: 275px;
+}
 
 .users-list {
   padding: 40px 60px;
 
   .image-col {
-    text-align:center;
+    text-align: center;
 
     .image {
       border-radius: 50%;
@@ -22,9 +25,11 @@
       height: 100px;
     }
   }
+
   .text-col {
     margin: auto 0px;
   }
+
   .actions-col {
     text-align: center;
     margin: auto 0px;
@@ -32,8 +37,24 @@
     .action {
       line-height: 1;
     }
+
     .icon {
       font-size: 20px;
     }
+
+  }
+}
+
+@media (max-width: 700px) {
+  .mb-1 {
+    display: inline-block;
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+  }
+
+  .users-list[_ngcontent-c2]{
+    padding: 60px 10px;
   }
 }
