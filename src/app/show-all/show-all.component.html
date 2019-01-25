@@ -22,7 +22,7 @@
         <h6>{{this.item.Reserver}}</h6>
         <h5 class="mb-1">Reservation Date</h5>
         <h6>{{this.item.ReservationDate}}</h6>
-        <form class="edit-form" [formGroup]="exampleForm" novalidate (ngSubmit)="onSubmit(exampleForm.value)">
+        <form class="edit-form" [formGroup]="reservationForm" novalidate (ngSubmit)="cancel()">
             <div class="row submit-button-container">
               <div class="col-md-4">
                 <button mat-raised-button class="submit-button" color="primary" routerLink="home">Back</button>

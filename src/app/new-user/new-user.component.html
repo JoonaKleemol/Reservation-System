@@ -13,14 +13,14 @@
 
       <div class="col col-md-8">
 
-        <form class="create-form" [formGroup]="exampleForm" novalidate (ngSubmit)="onSubmit(exampleForm.value)">
+        <form class="create-form" [formGroup]="reservationForm" novalidate (ngSubmit)="onSubmit(reservationForm.value)">
 
           <div class="form-group">
             <mat-form-field class="input-style">
               <input matInput placeholder="Customer Name" class="form-control" formControlName="CustomerName">
             </mat-form-field>
             <ng-container *ngFor="let validation of validation_messages.CustomerName">
-              <mat-error *ngIf="exampleForm.get('CustomerName').hasError(validation.type) && (exampleForm.get('CustomerName').dirty || exampleForm.get('CustomerName').touched)">{{validation.message}}</mat-error>
+              <mat-error *ngIf="reservationForm.get('CustomerName').hasError(validation.type) && (reservationForm.get('CustomerName').dirty || reservationForm.get('CustomerName').touched)">{{validation.message}}</mat-error>
             </ng-container>
           </div>
 
@@ -29,7 +29,7 @@
               <input matInput type="number" min="0" placeholder="Customer Phone" class="form-control" formControlName="CustomerPhone">
             </mat-form-field>
             <ng-container *ngFor="let validation of validation_messages.CustomerPhone">
-              <mat-error *ngIf="exampleForm.get('CustomerPhone').hasError(validation.type) && (exampleForm.get('CustomerPhone').dirty || exampleForm.get('CustomerPhone').touched)">{{validation.message}}</mat-error>
+              <mat-error *ngIf="reservationForm.get('CustomerPhone').hasError(validation.type) && (reservationForm.get('CustomerPhone').dirty || reservationForm.get('CustomerPhone').touched)">{{validation.message}}</mat-error>
             </ng-container>
           </div>
 
@@ -38,7 +38,7 @@
               <input matInput placeholder="Item Name" class="form-control" formControlName="ItemName">
             </mat-form-field>
             <ng-container *ngFor="let validation of validation_messages.ItemName">
-              <mat-error *ngIf="exampleForm.get('ItemName').hasError(validation.type) && (exampleForm.get('ItemName').dirty || exampleForm.get('ItemName').touched)">{{validation.message}}</mat-error>
+              <mat-error *ngIf="reservationForm.get('ItemName').Error && reservationForm.get('ItemName').hasError(validation.type) && (reservationForm.get('ItemName').dirty || reservationForm.get('ItemName').touched)">{{validation.message}}</mat-error>
             </ng-container>
           </div>
 
@@ -47,7 +47,7 @@
               <input matInput type="number" min="0" placeholder="Item ID" class="form-control" formControlName="ItemID">
             </mat-form-field>
             <ng-container *ngFor="let validation of validation_messages.ItemID">
-              <mat-error *ngIf="exampleForm.get('ItemID').hasError(validation.type) && (exampleForm.get('ItemID').dirty || exampleForm.get('ItemID').touched)">{{validation.message}}</mat-error>
+              <mat-error *ngIf="reservationForm.get('ItemID').hasError(validation.type) && (reservationForm.get('ItemID').dirty || reservationForm.get('ItemID').touched)">{{validation.message}}</mat-error>
             </ng-container>
           </div>
 
@@ -56,22 +56,22 @@
               <input matInput placeholder="Person who made the reservation" class="form-control" formControlName="Reserver">
             </mat-form-field>
             <ng-container *ngFor="let validation of validation_messages.Reserver">
-              <mat-error *ngIf="exampleForm.get('Reserver').hasError(validation.type) && (exampleForm.get('Reserver').dirty || exampleForm.get('Reserver').touched)">{{validation.message}}</mat-error>
+              <mat-error *ngIf="reservationForm.get('Reserver').hasError(validation.type) && (reservationForm.get('Reserver').dirty || reservationForm.get('Reserver').touched)">{{validation.message}}</mat-error>
             </ng-container>
           </div>
 
           <div class="form-group">
             <mat-form-field class="input-style">
-              <input matInput placeholder="Reserved until" class="form-control" formControlName="ReservationDate">
+              <input matInput placeholder="Reserved until (dd.mm)" class="form-control" formControlName="ReservationDate" ngModel pattern="(0?[1-9]|[12][0-9]|3[01])\.+(0?[0-9]|[1][0-2])">
             </mat-form-field>
             <ng-container *ngFor="let validation of validation_messages.ReservationDate">
-              <mat-error *ngIf="exampleForm.get('ReservationDate').hasError(validation.type) && (exampleForm.get('ReservationDate').dirty || exampleForm.get('ReservationDate').touched)">{{validation.message}}</mat-error>
+              <mat-error *ngIf="reservationForm.get('ReservationDate').hasError(validation.type) && (reservationForm.get('ReservationDate').dirty || reservationForm.get('ReservationDate').touched)">{{validation.message}}</mat-error>
             </ng-container>
           </div>
 
           <div class="row submit-button-container">
             <div class="col-md-4">
-              <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="!exampleForm.valid">Create</button>
+              <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="!reservationForm.valid">Create</button>
             </div>
           </div>
 

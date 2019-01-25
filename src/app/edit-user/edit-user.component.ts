@@ -14,19 +14,28 @@ import { AuthService } from '../services/auth.service';
 })
 export class EditUserComponent implements OnInit {
 
-  exampleForm: FormGroup;
+  reservationForm: FormGroup;
   item: any;
 
   validation_messages = {
-   'CustomerName': [
-     { type: 'required', message: 'Customer Name is required.' }
-   ],
-   'ItemName': [
-     { type: 'required', message: 'Item Name is required.' }
-   ],
-   'ItemID': [
-     { type: 'required', message: 'Item ID is required.' },
-   ]
+    'CustomerName': [
+      { type: 'required', message: 'Customer Name is required.' }
+    ],
+    'ItemName': [
+      { type: 'required', message: 'Item Name is required.' }
+    ],
+    'ItemID': [
+      { type: 'required', message: 'Item ID is required.' },
+    ],
+    'Reserver': [
+      { type: 'required', message: 'Reserver is required.' },
+    ],
+    'ReservationDate': [
+      { type: 'required', message: 'Date is required.' },
+    ],
+    'CustomerPhone': [
+      { type: 'required', message: 'Item ID is required.' },
+    ]
  };
 
   constructor(
@@ -50,10 +59,13 @@ export class EditUserComponent implements OnInit {
   }
 
   createForm() {
-    this.exampleForm = this.fb.group({
+    this.reservationForm = this.fb.group({
       CustomerName: [this.item.CustomerName, Validators.required],
       ItemName: [this.item.ItemName, Validators.required],
-      ItemID: [this.item.ItemID, Validators.required]
+      Reserver: [this.item.Reserver, Validators.required],
+      ReservationDate: [this.item.ReservationDate, Validators.required],
+      ItemID: [this.item.ItemID, Validators.required],
+      CustomerPhone: [this.item.CustomerPhone, Validators.required]
     });
   }
 
@@ -76,7 +88,7 @@ export class EditUserComponent implements OnInit {
     this.firebaseService.updateUser(this.item.id, value)
     .then(
       res => {
-        this.router.navigate(['home']);
+        this.router.navigate(['/home']);
       }
     )
   }
@@ -85,7 +97,7 @@ export class EditUserComponent implements OnInit {
     this.firebaseService.deleteUser(this.item.id)
     .then(
       res => {
-        this.router.navigate(['home']);
+        this.router.navigate(['/home']);
       },
       err => {
         console.log(err);
@@ -94,7 +106,7 @@ export class EditUserComponent implements OnInit {
   }
 
   cancel(){
-    this.router.navigate(['home']);
+    this.router.navigate(['/home']);
   }
 
 }

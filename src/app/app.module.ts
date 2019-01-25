@@ -13,12 +13,11 @@ import { NewUserComponent } from './new-user/new-user.component';
 import { HomeComponent } from './home/home.component';
 
 import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { FirebaseService } from './services/firebase.service';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import * as firebase from 'firebase/app';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatInputModule, MatSliderModule, MatDialogModule } from '@angular/material';
@@ -56,7 +55,7 @@ import { ShowAllResolver } from './show-all/show-all.resolver';
     MatSliderModule,
     MatDialogModule
   ],
-  providers: [FirebaseService, EditUserResolver, ShowAllResolver, AuthService, AuthGuard],
+  providers: [FirebaseService, EditUserResolver, ShowAllResolver, AuthService, AuthGuard, { provide: FirestoreSettingsToken, useValue: {} }],
   bootstrap: [AppComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

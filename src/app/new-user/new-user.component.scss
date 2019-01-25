@@ -1,5 +1,4 @@
 .create-page {
-
   padding: 20px 60px;
 
   .page-content {
@@ -24,12 +23,12 @@
       .submit-button-container {
         justify-content: flex-end;
 
-        .submit-button{
+        .submit-button {
           width: 100%;
         }
       }
 
-      .input-style{
+      .input-style {
         width: 100%;
       }
 
@@ -37,5 +36,14 @@
         font-size: 12px;
       }
     }
+  }
+
+  input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
   }
 }

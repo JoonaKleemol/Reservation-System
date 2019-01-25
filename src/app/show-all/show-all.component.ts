@@ -14,7 +14,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class ShowAllComponent implements OnInit {
 
-  exampleForm: FormGroup;
+  reservationForm: FormGroup;
   item: any;
 
   validation_messages = {
@@ -50,7 +50,7 @@ export class ShowAllComponent implements OnInit {
   }
 
   createForm() {
-    this.exampleForm = this.fb.group({
+    this.reservationForm = this.fb.group({
       CustomerName: [this.item.CustomerName],
       ItemName: [this.item.ItemName],
       ItemID: [this.item.ItemID],
